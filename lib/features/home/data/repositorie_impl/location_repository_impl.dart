@@ -19,9 +19,11 @@ class LocationRepositoryImpl extends LocationRepository {
     Position position = data.keys.first;
     Placemark placemark = data.values.first;
 
+
     return PositionModel.fromGeolocatorPosition(
       position,
       placemark.name ?? "Unknown",
+      placemark.country ?? "Unknown",
     );
   }
 }

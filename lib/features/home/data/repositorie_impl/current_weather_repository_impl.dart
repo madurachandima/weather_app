@@ -27,7 +27,7 @@ class CurrentWeatherRepositoryImpl extends CurrentWeatherRepository {
       return Weather(
           weatherCondition: currentWeatherModel.weather?[0].main,
           weatherDescription: currentWeatherModel.weather?[0].description,
-          weatherIcon: currentWeatherModel.weather?[0].icon,
+          weatherConditionId: currentWeatherModel.weather?[0].id,
           temp: currentWeatherModel.main?.temp,
           humidity: currentWeatherModel.main?.humidity,
           windSpeed: currentWeatherModel.wind?.speed,

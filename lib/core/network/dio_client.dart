@@ -9,7 +9,10 @@ class DioClient {
   ) {
     dio.options = BaseOptions(
       baseUrl: baseUrl,
-      queryParameters: {"appId": "ed0f08b1152bbaf06ac2a7b73c56002d"},
+      queryParameters: {
+        "appId": "ed0f08b1152bbaf06ac2a7b73c56002d",
+        "units": "metric"
+      },
       connectTimeout: const Duration(seconds: 10),
       receiveTimeout: const Duration(seconds: 10),
       headers: {'Content-Type': 'application/json'},

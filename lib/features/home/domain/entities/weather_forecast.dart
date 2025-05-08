@@ -2,16 +2,16 @@ class WeatherForecast {
   String? locationName;
   int? sunrise;
   int? sunset;
-  List<WeatherForecastElement>? weatherForecast;
+  List<List<WeatherForecastElement>>? weatherForecasts;
 
   WeatherForecast(
-      {this.locationName, this.sunrise, this.sunset, this.weatherForecast});
+      {this.locationName, this.sunrise, this.sunset, this.weatherForecasts});
 }
 
 class WeatherForecastElement {
   String? weatherCondition;
   String? weatherDescription;
-  String? weatherIcon;
+  int? weatherConditionId;
   double? temp;
   int? humidity;
   double? windSpeed;
@@ -20,7 +20,7 @@ class WeatherForecastElement {
   WeatherForecastElement(
       {this.weatherCondition,
       this.weatherDescription,
-      this.weatherIcon,
+      this.weatherConditionId,
       this.temp,
       this.humidity,
       this.windSpeed,

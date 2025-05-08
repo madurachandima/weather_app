@@ -1,7 +1,7 @@
 class Weather {
   String? weatherCondition;
   String? weatherDescription;
-  String? weatherIcon;
+  int? weatherConditionId;
   double? temp;
   int? humidity;
   double? windSpeed;
@@ -12,7 +12,7 @@ class Weather {
   Weather(
       {this.weatherCondition,
       this.weatherDescription,
-      this.weatherIcon,
+      this.weatherConditionId,
       this.temp,
       this.humidity,
       this.windSpeed,

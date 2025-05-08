@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+  <g class="am-weather-sun" transform="translate(12,12)">
+    <line y1="7" y2="10" stroke="#ffa500" stroke-linecap="round" stroke-width="2" />
+    <g transform="rotate(45)">
+      <line y1="7" y2="10" stroke="#ffa500" stroke-linecap="round" stroke-width="2" />
+    </g>
+    <g transform="rotate(90)">
+      <line y1="7" y2="10" stroke="#ffa500" stroke-linecap="round" stroke-width="2" />
+    </g>
+    <g transform="rotate(135)">
+      <line y1="7" y2="10" stroke="#ffa500" stroke-linecap="round" stroke-width="2" />
+    </g>
+    <g transform="rotate(180)">
+      <line y1="7" y2="10" stroke="#ffa500" stroke-linecap="round" stroke-width="2" />
+    </g>
+    <g transform="rotate(225)">
+      <line y1="7" y2="10" stroke="#ffa500" stroke-linecap="round" stroke-width="2" />
+    </g>
+    <g transform="rotate(270)">
+      <line y1="7" y2="10" stroke="#ffa500" stroke-linecap="round" stroke-width="2" />
+    </g>
+    <g transform="rotate(315)">
+      <line y1="7" y2="10" stroke="#ffa500" stroke-linecap="round" stroke-width="2" />
+    </g>
+    <circle r="5" fill="#ffa500" stroke="#ffa500" stroke-width="2" />
+  </g>
+</svg>
