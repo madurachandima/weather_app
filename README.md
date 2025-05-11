@@ -1,5 +1,4 @@
 # weather_app
 
-A new Flutter project.
-
-//
+Weather App
+ -  develop by BLoC Design pattern with Clean Architecture.
