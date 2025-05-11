@@ -67,8 +67,7 @@ class WeatherForecastSection extends StatelessWidget {
           if (element.weatherConditionId != null)
             ClipRRect(
               child: SvgPicture.asset(
-                getWeatherIcon(element.weatherConditionId!, Utils.isDayTime()
-                ),
+                getWeatherIcon(element.weatherConditionId!, Utils.isDayTime()),
                 fit: BoxFit.cover,
                 width: 60,
               ),

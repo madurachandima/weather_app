@@ -6,7 +6,6 @@ import '../../../../core/network/dio_client.dart';
 import '../../domain/entities/position.dart';
 import '../models/weather_forecast/weather_forecast_model.dart';
 
-
 class WeatherForecastDataSource {
   final DioClient dioClient;
 

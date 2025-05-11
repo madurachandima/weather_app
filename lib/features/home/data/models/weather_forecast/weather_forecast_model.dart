@@ -1,5 +1,3 @@
-
-
 import 'city_model.dart';
 import 'weather_element_model.dart';
 

@@ -7,14 +7,12 @@ import 'package:weather_app/features/home/presentation/bloc/current_location/cur
 import 'package:weather_app/features/home/presentation/widgets/current_location_header.dart';
 
 import '../../domain/entities/weather_forecast.dart';
+import '../bloc/background_image/background_image_bloc.dart';
 import '../bloc/weather/current_weather_bloc.dart';
 import '../bloc/weather_forecast/weather_forecast_bloc.dart';
 import '../widgets/Weather_details_section.dart';
 import '../widgets/current_weather_status.dart';
 import '../widgets/weather_forecast_section.dart';
-
-// BackdropFilter(
-// filter: ImageFilter.blur(sigmaX: 8.0, sigmaY: 8.0),
 
 class LocationPage extends StatefulWidget {
   const LocationPage({super.key});
@@ -35,14 +33,24 @@ class _LocationPageState extends State<LocationPage> {
     return Scaffold(
         body: Stack(
       children: [
-        CachedNetworkImage(
-          imageUrl:
-              "https://images.unsplash.com/photo-1556525185-fc8a5a7aaa6b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDY5Nzd8MHwxfHNlYXJjaHwxfHxTcmklMjBMYW5rYXxlbnwwfDF8fHwxNzQ2NDE3OTc5fDA&ixlib=rb-4.0.3&q=80&w=1080",
-          fit: BoxFit.cover,
-          height: MediaQuery.of(context).size.height,
-          placeholder: (context, url) => const CircularProgressIndicator(),
-          errorWidget: (context, url, error) => const Icon(Icons.error),
-        ),
+        BlocBuilder<BackgroundImageBloc, BackgroundImageState>(
+            builder: (context, state) {
+          if (state is BackgroundImageError) {
+            return const SizedBox();
+          }
+
+          if (state is BackgroundImageLoaded) {
+            return CachedNetworkImage(
+              imageUrl: state.backgroundImage,
+              fit: BoxFit.cover,
+              height: MediaQuery.of(context).size.height,
+              placeholder: (context, url) => const CircularProgressIndicator(),
+              errorWidget: (context, url, error) => const Icon(Icons.error),
+            );
+          }
+
+          return const Center(child: CircularProgressIndicator());
+        }),
         BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 8.0, sigmaY: 8.0),
           child: SafeArea(
@@ -56,6 +64,12 @@ class _LocationPageState extends State<LocationPage> {
                         context
                             .read<CurrentWeatherBloc>()
                             .add(FetchCurrentWeather(position: state.position));
+
+                        if (state.position.locationName != null) {
+                          context.read<BackgroundImageBloc>().add(
+                              FetchBackgroundImageEvent(
+                                  state.position.locationName!));
+                        }
                       }
                     },
                   )

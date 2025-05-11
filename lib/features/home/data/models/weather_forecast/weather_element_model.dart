@@ -11,7 +11,7 @@ class WeatherElementModel {
   CloudsModel? clouds;
   WindModel? wind;
   int? visibility;
-  int? pop;
+
   SysModel? sys;
   DateTime? dtTxt;
 
@@ -22,7 +22,6 @@ class WeatherElementModel {
     this.clouds,
     this.wind,
     this.visibility,
-    this.pop,
     this.sys,
     this.dtTxt,
   });
@@ -39,8 +38,7 @@ class WeatherElementModel {
             ? null
             : CloudsModel.fromJson(json["clouds"]),
         wind: json["wind"] == null ? null : WindModel.fromJson(json["wind"]),
-        visibility: json["visibility"],
-        pop: json["pop"],
+         visibility: json["visibility"],
         sys: json["sys"] == null ? null : SysModel.fromJson(json["sys"]),
         dtTxt: json["dt_txt"] == null ? null : DateTime.parse(json["dt_txt"]),
       );
